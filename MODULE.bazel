@@ -1,0 +1,12 @@
+bazel_dep(name = "rules_java", version = "7.11.1")
+
+# Load the rule here
+git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+# Define the repository here
+git_repository(
+    name = "fancy_text_repo",
+    remote = "https://github.com/EngFlow/fancy-text.git",
+    commit = "f5ad393609112cc6fb51936fa0f6be943055bb3c",
+    strip_prefix = "src/java/com/engflow/fancytext/",
+)
